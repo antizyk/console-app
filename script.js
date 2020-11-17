@@ -6,7 +6,7 @@ function ask() {
 	for (let i = 0; i < 2; i++) {
 		let movie = prompt('Один из последних просмотренных фильмов?');
 		let apprasial = prompt('На сколько его оцените?');
-		personalMovieDB.movies.movie = apprasial;
+		personalMovieDB.movies[`${movie}`] = apprasial;
 	}
 }
 
