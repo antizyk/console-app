@@ -42,6 +42,14 @@ function showMyDB() {
 		console.log(personalMovieDB);
 	}
 }
+
+function writeYourGeners() {
+	let answer;
+	for (let i = 0; i < 3; i++) {
+		answer = prompt(`Ваш любимый жанр под номером ${i + 1}?`);
+		personalMovieDB.genres.push(answer);
+	}
+}
 //TODOO=================================================================================
 
 
@@ -50,13 +58,12 @@ let personalMovieDB = {//Объект со всей информацией по 
 	count: numberOfFilms,
 	movies: {},
 	actors: {},
-	genres: {},
+	genres: [],
 	privat: false
 }
 
 ask();
-detctPersonalLevel();
 showMyDB();
+writeYourGeners();
+detctPersonalLevel();
 
-
-console.log(personalMovieDB);//Вывод результата работы кода в консоль для проверке
