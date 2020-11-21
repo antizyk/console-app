@@ -4,7 +4,7 @@
 let numberOfFilms;
 
 function start() {
-	while (numberOfFilms == null || numberOfFilms === '' || numberOfFilms > 50) {
+	while (numberOfFilms == null || numberOfFilms === '' || numberOfFilms > 50 || isNaN(numberOfFilms)) {
 		numberOfFilms = prompt("Сколько фильмов вы уже смотрели?");//Запрос о количестве просмотренных фильмов за последнее время
 	}
 	return numberOfFilms;
@@ -13,7 +13,7 @@ function start() {
 start();
 
 function ask() {//Функция запрашивающая информацию о фильмах
-	for (let i = 0; i < +numberOfFilms; i++) {//Цикл зависящий от кол-ва просмотренных фильмов за последнее время
+	for (let i = 0; i < numberOfFilms; i++) {//Цикл зависящий от кол-ва просмотренных фильмов за последнее время
 		let movie = prompt('Один из последних просмотренных фильмов?');//Запрос о названии фильма
 		let apprasial = prompt('На сколько его оцените?');//Запрос об оценку этого фильма
 		if (movie != null && apprasial != null && movie != '' && apprasial != '' && movie.length < 50) {
