@@ -1,11 +1,16 @@
 "use strict";
 
 
+let numberOfFilms;
 
-const numberOfFilms = prompt("Сколько фильмов вы уже смотрели?");//Запрос о количестве просмотренных фильмов за последнее время
+function start() {
+	while (numberOfFilms == null || numberOfFilms === '' || numberOfFilms > 50) {
+		numberOfFilms = prompt("Сколько фильмов вы уже смотрели?");//Запрос о количестве просмотренных фильмов за последнее время
+	}
+	return numberOfFilms;
+}
 
-
-
+start();
 
 function ask() {//Функция запрашивающая информацию о фильмах
 	for (let i = 0; i < +numberOfFilms; i++) {//Цикл зависящий от кол-ва просмотренных фильмов за последнее время
