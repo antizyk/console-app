@@ -47,8 +47,14 @@ let personalMovieDB = {//Объект со всей информацией по 
 		let answer;
 		for (let i = 0; i < 3; i++) {
 			answer = prompt(`Ваш любимый жанр под номером ${i + 1}?`);
+			if (answer === '' || answer === null) {
+				i--;
+			}
 			this.genres.push(answer);
 		}
+		this.genres.forEach(function (value, index, arr) {
+			console.log(`Любимый жанр ${index + 1} - это ${value}`);
+		});
 	},
 	toggleVisibleMyDB: function () {
 		if (this.privat === false) {
